@@ -21,6 +21,14 @@ group by customer_id,customer_name)
 
 select * from ranking 
 limit 5;
+
+
+
+
+
+
+
+
 ##❓ Q2. Monthly Sales Trend + YOY Growth
 ##For the past 2 years, calculate:
 ##Monthly total sales
@@ -45,6 +53,14 @@ round(((( sales - prev_year_sales ) / prev_year_sales ) * 100),2) as yoy_growth_
 from 
 running_total
 order by order_month;
+
+
+
+
+
+
+
+
 ##❓ Q3. Churn Analysis by Customer
 ##Using orders from the past 12 months:
 ##Find customers who placed an order in a given month but did not return in the next month (churn).
@@ -67,6 +83,12 @@ next_month
 where next_month is null or  PERIOD_DIFF(DATE_FORMAT(next_month, '%Y%m'), DATE_FORMAT(order_month, '%Y%m')) > 1
 ORDER BY customer_id,churn_month;
 
+
+
+
+
+
+
 ##❓ Modified Q4. Category Sales Share + Ranking
 ##For each product category:
 ##Calculate total sales.
@@ -88,8 +110,11 @@ ranked as ( select category_id,sales,contribution,rank() over ( order by contrib
 
 select category_id,sales,contribution
 from ranked
-where rnk <=3
-;
+where rnk <=3;
+
+
+
+
 
 
 
