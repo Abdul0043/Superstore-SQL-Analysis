@@ -1,5 +1,8 @@
 ## Q1. Customer Lifetime Value (CLV)
-##Identify the top 5 customers who have spent the most overall. Along with their total spending, also calculate Number of orders,Average order value,Their ranking within all customers using RANK()
+##Identify the top 5 customers who have spent the most overall. Along with their total spending,
+##calculate Number of orders,
+##Average order value,
+##Their ranking within all customers 
 
 with cst_spending as
  ( select
